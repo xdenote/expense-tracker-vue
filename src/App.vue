@@ -4,6 +4,14 @@ import Balance from "@/components/Balance.vue";
 import IncomeExpenses from "@/components/IncomeExpenses.vue";
 import TransactionList from "@/components/TransactionList.vue";
 import AddTransactions from "@/components/AddTransactions.vue";
+import { ref } from "vue";
+
+const transactions = ref([
+  { id: 1, text: "Flower", amount: -20 },
+  { id: 2, text: "Salary", amount: 300 },
+  { id: 3, text: "Book", amount: -10 },
+  { id: 4, text: "Camera", amount: 150 },
+]);
 
 </script>
 
@@ -12,7 +20,7 @@ import AddTransactions from "@/components/AddTransactions.vue";
   <div class="container">
     <Balance/>
     <IncomeExpenses/>
-    <TransactionList/>
+    <TransactionList :transactions="transactions"/>
     <AddTransactions/>
   </div>
 </template>
